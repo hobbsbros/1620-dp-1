@@ -61,7 +61,7 @@ LAUNCH_ACCELERATION = 3
 ANGLE = 15
 
 # The cost of space shuttle launch (in $/g)
-LAUNCH_COST_PER_G = 0
+LAUNCH_COST_PER_G = 54.5
 
 # Factor of safety
 FOS = 1.3
@@ -187,7 +187,7 @@ def solve(start = (0,) * len(BOLTS)):
         # Get the first item off of the agenda
         this = agenda.pop(0)
 
-        print(f"{this} | FOS {fos(this)} | ${cost(this)}")
+        print(f"{this} | FOS {round(fos(this), 6)} | ${round(cost(this), 2)}")
 
         # Check constraint
         if check(this):
