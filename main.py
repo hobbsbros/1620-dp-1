@@ -183,11 +183,14 @@ def solve(start = (0,) * len(BOLTS)):
     agenda = [start]
     seen = {start}
 
+    i = 1
+
     while agenda:
         # Get the first item off of the agenda
         this = agenda.pop(0)
 
-        print(f"{this} | FOS {round(fos(this), 6)} | ${round(cost(this), 2)}")
+        print(f"{i} | {this} | FOS {round(fos(this), 6)} | ${round(cost(this), 2)}")
+        i += 1
 
         # Check constraint
         if check(this):
